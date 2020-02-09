@@ -55,7 +55,7 @@ const mrsWhite = {
 }
 
 
-// CREATED OBJECTS FOR ALL THE WEAPONS, ADDED MORE CHARACTERISTICS TO THE WEAPONS.
+// CREATED OBJECTS FOR ALL THE WEAPONS, ADDED CHARACTERISTICS TO THE WEAPONS.
 
 const rope = {
   name: 'rope',
@@ -79,8 +79,9 @@ const poison = {
 const bedroom = 'Bedroom'
 const balcony = 'Balcony'
 const garden = 'Garden'
+const saloon = 'Saloon'
 
-// NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
+// ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS:
 
 const suspects = [
   mrGreen,
@@ -113,9 +114,9 @@ const randomSelector = array => {
 // With a killer, a weapon and a room.
 // The values will be set later.
 let mystery = {
-  theKiller:'',
-  theWeapon:'',
-  theRoom:''
+  killer:'',
+  weapon:'',
+  room:''
 }
 
 // This function will be invoked when you click on the killer card.
@@ -123,11 +124,12 @@ const pickKiller = () => {
   // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.killer = randomSelector(suspects)
 
-  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
+  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer.
   document.getElementById('killerCard').style.background = mystery.killer.color
   document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
   document.getElementById('killerAge').innerHTML = `with the age off ${mystery.killer.age}`
   document.getElementById('killerDescription').innerHTML = `and ${mystery.killer.description}`
+  // The image here doesnt show, try to fix this
   document.getElementById('killerImage').innerHTML = `with the age off ${mystery.killer.image}`
   document.getElementById(`killerOccupation`).innerHTML = `Occupation: ${mystery.killer.occupation}`
 }
@@ -166,14 +168,14 @@ document.getElementById('revealation').onclick = function () {
   by ${mystery.killer.firstName} with the ${mystery.weapon.name}`
 }
 
-document.getElementById('killerCard').onclick = function () {
-  pickKiller()
-}
-
 document.getElementById('weaponCard').onclick = function () {
   pickWeapon()
 }
 
 document.getElementById('roomCard').onclick = function () {
   pickRoom()
+}
+
+document.getElementById('killerCard').onclick = function () {
+    pickKiller()
 }
