@@ -1,5 +1,4 @@
 // STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
-
 const mrGreen = {
   firstName: 'Jacob',
   lastName: 'Green',
@@ -9,6 +8,52 @@ const mrGreen = {
   image: 'assets/green.png',
   occupation: 'Entrepreneur'
 }
+const mrMustard = {
+  firstName: 'Harold',
+  lastName: 'Mustard',
+  color: 'yellow',
+  description: 'He has a lot of blaha',
+  age: 35,
+  image: 'assets/mustard.png',
+  occupation: 'Something'
+}
+const mrPeacock = {
+  firstName: 'Jo',
+  lastName: 'Peacock',
+  color: 'yellow',
+  description: 'He has a lot of blaha',
+  age: 35,
+  image: 'assets/peacock.png',
+  occupation: 'Something'
+}
+const msPlum = {
+  firstName: 'Jo',
+  lastName: 'Plum',
+  color: 'purple',
+  description: 'He has a lot of blaha',
+  age: 35,
+  image: 'assets/plum.png',
+  occupation: 'Something'
+}
+const msScarlet = {
+  firstName: 'Jo',
+  lastName: 'Scarlet',
+  color: 'yellow',
+  description: 'He has a lot of blaha',
+  age: 35,
+  image: 'assets/scarlet.png',
+  occupation: 'Something'
+}
+const msWhite = {
+  firstName: 'Jo',
+  lastName: 'White',
+  color: 'white',
+  description: 'He has a lot of blaha',
+  age: 35,
+  image: 'assets/white.png',
+  occupation: 'Something'
+}
+
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
