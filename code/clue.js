@@ -17,7 +17,7 @@ const mrMustard = {
   image: 'assets/mustard.png',
   occupation: 'Something'
 }
-const mrPeacock = {
+const mrsPeacock = {
   firstName: 'Jo',
   lastName: 'Peacock',
   color: 'yellow',
@@ -26,7 +26,7 @@ const mrPeacock = {
   image: 'assets/peacock.png',
   occupation: 'Something'
 }
-const msPlum = {
+const mrPlum = {
   firstName: 'Jo',
   lastName: 'Plum',
   color: 'purple',
@@ -35,7 +35,7 @@ const msPlum = {
   image: 'assets/plum.png',
   occupation: 'Something'
 }
-const msScarlet = {
+const mrsScarlet = {
   firstName: 'Jo',
   lastName: 'Scarlet',
   color: 'yellow',
@@ -44,7 +44,7 @@ const msScarlet = {
   image: 'assets/scarlet.png',
   occupation: 'Something'
 }
-const msWhite = {
+const mrsWhite = {
   firstName: 'Jo',
   lastName: 'White',
   color: 'white',
@@ -62,19 +62,42 @@ const rope = {
   weight: 10
 }
 
-// THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
+const knife = {
+  name: 'knife',
+  weight: 100
+}
 
+const potato = {
+  name: 'potato',
+  weight: 1
+}
+
+// THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
+const bedroom = 'Bedroom'
+const balcony = 'Balcony'
+const garden = 'Garden'
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
 const suspects = [
   mrGreen,
-  mrsWhite
-  // ...  and the rest
+  mrsWhite,
+  mrMustard,
+  mrsPeacock,
+  mrsScarlet,
+  mrPlum
 ]
 
-const weapons = []
+const weapons = [
+  rope,
+  knife,
+  potato,
+]
 
-const rooms = []
+const rooms = [
+  bedroom,
+  balcony,
+  garden
+]
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
