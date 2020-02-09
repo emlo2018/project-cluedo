@@ -1,13 +1,11 @@
 # Cluedo - Mystery Randomizer
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This is a the game cluedo. It randomizes a mystory for the players to solve.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+Step one was to create the constant objects. Later on the button for randomizing objects was added. When this worked well in the console the results where made visible in the dom with javascript. I will add images and styling to this project.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://boring-mayer-31f358.netlify.com/
