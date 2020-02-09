@@ -1,4 +1,4 @@
-// STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
+// STEP 1 - OBJECTS FOR ALL THE SUSPECTS
 const mrGreen = {
   firstName: 'Jacob',
   lastName: 'Green',
@@ -55,7 +55,7 @@ const mrsWhite = {
 }
 
 
-// CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
+// CREATED OBJECTS FOR ALL THE WEAPONS, ADDED MORE CHARACTERISTICS TO THE WEAPONS.
 
 const rope = {
   name: 'rope',
@@ -79,6 +79,7 @@ const poison = {
 const bedroom = 'Bedroom'
 const balcony = 'Balcony'
 const garden = 'Garden'
+
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
 const suspects = [
@@ -161,5 +162,18 @@ document.getElementById('revealation').onclick = function () {
 
   document.getElementById(
     'mystery'
-  ).innerHTML = `The murder was committed in the ${mystery.room}, by ${mystery.killer.firstName} with the ${mystery.weapon.name}`
+  ).innerHTML = `The murder was committed in the ${mystery.room}, 
+  by ${mystery.killer.firstName} with the ${mystery.weapon.name}`
+}
+
+document.getElementById('killerCard').onclick = function () {
+  pickKiller()
+}
+
+document.getElementById('weaponCard').onclick = function () {
+  pickWeapon()
+}
+
+document.getElementById('roomCard').onclick = function () {
+  pickRoom()
 }
