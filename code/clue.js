@@ -124,9 +124,8 @@ const pickKiller = () => {
 
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
   document.getElementById('killerCard').style.background = mystery.killer.color
-  document.getElementById(
-    'killerName'
-  ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName} ${mystery.killer.description}`
+  document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName} ${mystery.killer.description}`
+  document.getElementById('killerImage').innerHTML = `${mystery.killer.image}`
 }
 
 // pickWeapon and pickRoom in a similar way.
@@ -137,7 +136,7 @@ const pickWeapon = () => {
   // This will change the weapon name and weight.
   document.getElementById(
     'weaponName'
-  ).innerHTML = `${mystery.weapon.weight} ${mystery.weapon.name}`
+  ).innerHTML = `${mystery.weapon.weight} kg off ${mystery.weapon.name}`
 }
 
 const pickRoom = () => {
@@ -160,5 +159,5 @@ document.getElementById('revealation').onclick = function () {
   document.getElementById(
     'mystery'
   ).innerHTML = `The murder was committed in the ${mystery.room}, by ${mystery.killer.firstName} with the ${mystery.weapon.name}`
-
+  document.getElementById('killerImage').innerHTML = `${mystery.killer.image}`
 }
