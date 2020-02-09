@@ -2,7 +2,7 @@
 const mrGreen = {
   firstName: 'Jacob',
   lastName: 'Green',
-  color: 'green',
+  color: '#42f59b',
   description: 'He has a lot of connections',
   age: 45,
   image: 'assets/green.png',
@@ -129,8 +129,10 @@ const pickKiller = () => {
   document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
   document.getElementById('killerAge').innerHTML = `with the age off ${mystery.killer.age}`
   document.getElementById('killerDescription').innerHTML = `and ${mystery.killer.description}`
-  // The image here doesnt show, try to fix this
-  document.getElementById('killerImage').innerHTML = `with the age off ${mystery.killer.image}`
+  const theKillerImage = document.getElementById("killerImage")
+  theKillerImage.src = mystery.killer.image
+  //document.getElementById('killerImage').innerHTML = `<img src='${mystery.killer.image}'>`
+  //document.getElementById('killerImage').innerHTML = `with the age off ${mystery.killer.image}`
   document.getElementById(`killerOccupation`).innerHTML = `Occupation: ${mystery.killer.occupation}`
 }
 
@@ -142,7 +144,7 @@ const pickWeapon = () => {
   // This will change the weapon name and weight.
   document.getElementById(
     'weaponName'
-  ).innerHTML = `${mystery.weapon.weight} kg off ${mystery.weapon.name}`
+  ).innerHTML = `weight: ${mystery.weapon.weight} name: ${mystery.weapon.name}`
 }
 
 const pickRoom = () => {
@@ -154,8 +156,9 @@ const pickRoom = () => {
     'roomName'
   ).innerHTML = `${mystery.room}`
 }
-// STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
-// 'The murder was committed by Jacob Green, in the living room with a rope.'
+// STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. 
+// It should show something like: 'The murder was committed by Jacob Green, in the living room with a rope.'
+
 document.getElementById('revealation').onclick = function () {
   
   pickKiller()
@@ -167,7 +170,7 @@ document.getElementById('revealation').onclick = function () {
   ).innerHTML = `The murder was committed in the ${mystery.room}, 
   by ${mystery.killer.firstName} with the ${mystery.weapon.name}`
 }
-
+// This is click functions that gives random values
 document.getElementById('weaponCard').onclick = function () {
   pickWeapon()
 }
@@ -178,4 +181,5 @@ document.getElementById('roomCard').onclick = function () {
 
 document.getElementById('killerCard').onclick = function () {
     pickKiller()
+    document.getElementById('killerImage').innerHTML = `<img src='${mystery.killer.image}'>`
 }
