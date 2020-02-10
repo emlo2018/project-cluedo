@@ -113,7 +113,7 @@ const randomSelector = array => {
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
 // With a killer, a weapon and a room.
 // The values will be set later.
-let mystery = {
+const mystery = {
   killer:'',
   weapon:'',
   room:''
@@ -131,9 +131,12 @@ const pickKiller = () => {
   document.getElementById('killerDescription').innerHTML = `and ${mystery.killer.description}`
   const theKillerImage = document.getElementById("killerImage")
   theKillerImage.src = mystery.killer.image
-  //document.getElementById('killerImage').innerHTML = `<img src='${mystery.killer.image}'>`
-  //document.getElementById('killerImage').innerHTML = `with the age off ${mystery.killer.image}`
   document.getElementById(`killerOccupation`).innerHTML = `Occupation: ${mystery.killer.occupation}`
+
+  /*document.getElementById('killerCard').onclick = function () {
+    pickKiller()
+    document.getElementById('killerImage').innerHTML = `<img src='${mystery.killer.image}'>`
+  }*/
 }
 
 // pickWeapon and pickRoom in a similar way.
@@ -145,6 +148,7 @@ const pickWeapon = () => {
   document.getElementById(
     'weaponName'
   ).innerHTML = `weight: ${mystery.weapon.weight} name: ${mystery.weapon.name}`
+
 }
 
 const pickRoom = () => {
@@ -156,30 +160,48 @@ const pickRoom = () => {
     'roomName'
   ).innerHTML = `${mystery.room}`
 }
-// STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. 
-// It should show something like: 'The murder was committed by Jacob Green, in the living room with a rope.'
 
-document.getElementById('revealation').onclick = function () {
-  
+//This will make the cards clickable 
+document.getElementById('killerCard').onclick = function () {
   pickKiller()
-  pickRoom()
-  pickWeapon()
-
-  document.getElementById(
-    'mystery'
-  ).innerHTML = `The murder was committed in the ${mystery.room}, 
-  by ${mystery.killer.firstName} with the ${mystery.weapon.name}`
-}
-// This is click functions that gives random values
-document.getElementById('weaponCard').onclick = function () {
-  pickWeapon()
+  document.getElementById('killerImage').innerHTML = `<img src='${mystery.killer.image}'>`
 }
 
 document.getElementById('roomCard').onclick = function () {
   pickRoom()
 }
 
-document.getElementById('killerCard').onclick = function () {
+document.getElementById('weaponCard').onclick = function () {
+  pickWeapon()
+}
+
+// STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. 
+// It should show something like: 'The murder was committed by Jacob Green, in the living room with a rope.'
+const revealMystery = () => {
+
+  
+ /* pickKiller()
+  pickRoom()
+  pickWeapon() */
+
+  document.getElementById(
+    'mystery'
+  ).innerHTML = `The murder was committed in the ${mystery.room}, 
+  by ${mystery.killer.firstName} with the ${mystery.weapon.name}`
+
+}
+
+document.getElementById('revealation').onclick = revealMystery 
+/*
+document.getElementById('weaponCard').onclick = function () {
+  pickWeapon()
+} */
+
+/*document.getElementById('roomCard').onclick = function () {
+  pickRoom()
+}/*
+
+/*document.getElementById('killerCard').onclick = function () {
     pickKiller()
     document.getElementById('killerImage').innerHTML = `<img src='${mystery.killer.image}'>`
-}
+}*/
