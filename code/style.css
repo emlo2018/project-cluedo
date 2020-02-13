@@ -2,6 +2,19 @@ body {
   margin: 0;
   font-family: "Courier New", Courier, monospace;
   background-image: url('assets/castle.jpg');
+  margin: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+display: flex;
+align-self: center;
+}
+
+h1 {
+  font-size: 5rem;
 }
 
 p {
@@ -49,7 +62,7 @@ p {
 }
 
 button {
-  padding: 8px 16px ;
+  padding: 8px 16px;
   background: crimson;
   border: none;
   font-size: 20px;
@@ -59,6 +72,10 @@ button {
   cursor: pointer;
 }
 
-img {
+.killerImg {
   border-radius: 100%;
+}
+
+.weapon {
+  border-radius: none;
 }

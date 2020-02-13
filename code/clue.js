@@ -59,47 +59,50 @@ const mrsWhite = {
 
 const rope = {
   name: 'rope',
-  weight: 10
+  weight: 10,
+  image: 'https://previews.123rf.com/images/jirapatche/jirapatche1611/jirapatche161100284/66021254-rope-tied-up-to-a-knot.jpg'
 }
 
 const knife = {
   name: 'knife',
-  weight: 100
+  weight: 100,
+  image: 'assets/riddarkniv.jpg'
 }
 
 const poison = {
   name: 'poison',
-  weight: 1
+  weight: 1,
+  image: 'assets/poison.jpeg'
 }
 
 const candlestick = {
   name: 'candlestick',
-  weight: 10
-}
-
-const dumbbell = {
-  name: 'dumbbell',
-  weight: 10
+  weight: 10,
+  image: 'https://cdn.shopify.com/s/files/1/1937/5233/products/CL0458x2_44_WP_35_5_B14_5_Pair_of_Antique_Gilded_Metal_Pricket_Candlesticks_Candle_Holders_Vintage-1_2048x2048.jpg'
 }
 
 const axe = {
   name: 'axe',
-  weight: 10
+  weight: 10,
+  image: 'https://cached.imagescaler.hbpl.co.uk/resize/scaleWidth/815/cached.offlinehbpl.hbpl.co.uk/news/SUC/ax2-2019101503351489.jpg'
 }
 
 const pistol = {
   name: 'pistol',
-  weight: 10
+  weight: 10,
+  image: 'http://www.ncpolicywatch.com/wp-content/uploads/2019/02/AdobeStock_gun450.jpg'
 }
 
 const bat = {
   name: 'bat',
-  weight: 10
+  weight: 10,
+  image: 'https://www.themashco.com/wp-content/uploads/2018/02/Baseball-Bat-and-ball-444x300.png'
 }
 
 const trophy = {
   name: 'trophy',
-  weight: 35
+  weight: 35,
+  image: 'https://media-manager.starsinsider.com/gallery/1920/na_5a97cea759206.jpg'
 }
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 const bedroom = 'Bedroom'
@@ -128,7 +131,12 @@ const suspects = [
 const weapons = [
   rope,
   knife,
-  poison
+  poison,
+  bat,
+  pistol,
+  candlestick,
+  trophy,
+  axe
 ]
 
 const rooms = [
@@ -158,13 +166,18 @@ const pickKiller = () => {
   mystery.killer = randomSelector(suspects)
 
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer.
-  document.getElementById('killerCard').style.background = mystery.killer.color
-  document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
-  document.getElementById('killerAge').innerHTML = `with the age off ${mystery.killer.age}`
-  document.getElementById('killerDescription').innerHTML = `and ${mystery.killer.description}`
   const theKillerImage = document.getElementById("killerImage")
+  document.getElementById(
+    'killerCard').style.background = mystery.killer.color
+  document.getElementById(
+    'killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
+  document.getElementById(
+    'killerAge').innerHTML = `with the age off ${mystery.killer.age}`
+  document.getElementById(
+    'killerDescription').innerHTML = `and ${mystery.killer.description}`
   theKillerImage.src = mystery.killer.image
-  document.getElementById(`killerOccupation`).innerHTML = `Occupation: ${mystery.killer.occupation}`
+  document.getElementById(
+    `killerOccupation`).innerHTML = `Occupation: ${mystery.killer.occupation}`
 }
 
 // pickWeapon and pickRoom in a similar way.
@@ -176,6 +189,8 @@ const pickWeapon = () => {
   document.getElementById(
     'weaponName'
   ).innerHTML = `weight: ${mystery.weapon.weight} name: ${mystery.weapon.name}`
+  const theWeaponImage = document.getElementById("weaponImage")
+  theWeaponImage.src = mystery.weapon.image
 }
 
 const pickRoom = () => {
@@ -189,17 +204,23 @@ const pickRoom = () => {
 }
 
 //This will make the cards clickable 
-document.getElementById('killerCard').onclick = function () {
+document.getElementById(
+  'killerCard').onclick = function () {
   pickKiller()
-  document.getElementById('killerImage').innerHTML = `<img src='${mystery.killer.image}'>`
+  document.getElementById(
+    'killerImage').innerHTML = `<img src='${mystery.killer.image}'>`
 }
 
-document.getElementById('roomCard').onclick = function () {
+document.getElementById(
+  'roomCard').onclick = function () {
   pickRoom()
 }
 
-document.getElementById('weaponCard').onclick = function () {
+document.getElementById(
+  'weaponCard').onclick = function () {
   pickWeapon()
+  document.getElementById(
+    'weaponImage').innerHTML = `<img src='${mystery.weapon.image}'>`
 }
 
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. 
@@ -212,4 +233,5 @@ const revealMystery = () => {
   by ${mystery.killer.firstName} with the ${mystery.weapon.name}`
 }
 
-document.getElementById('revealation').onclick = revealMystery 
+document.getElementById(
+  'revealation').onclick = revealMystery 
