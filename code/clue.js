@@ -9,9 +9,9 @@ const mrGreen = {
   occupation: 'Entrepreneur'
 }
 const mrMustard = {
-  firstName: 'Harold',
+  firstName: 'Colonel',
   lastName: 'Mustard',
-  color: 'yellow',
+  color: '#E89005',
   description: 'He has a big weapon collection',
   age: 35,
   image: 'assets/mustard.png',
@@ -38,7 +38,7 @@ const mrPlum = {
 const mrsScarlet = {
   firstName: 'Maya',
   lastName: 'Scarlet',
-  color: 'red',
+  color: '#FF1053',
   description: 'She has a dark history',
   age: 25,
   image: 'assets/scarlet.png',
@@ -47,7 +47,7 @@ const mrsScarlet = {
 const mrsWhite = {
   firstName: 'Charlotte',
   lastName: 'White',
-  color: 'white',
+  color: '#fff',
   description: 'Has a lot of friends and connections',
   age: 65,
   image: 'assets/white.png',
@@ -59,27 +59,60 @@ const mrsWhite = {
 
 const rope = {
   name: 'rope',
-  weight: 10,
-  hidden: true 
+  weight: 10
 }
 
 const knife = {
   name: 'knife',
-  weight: 100,
-  hidden: false
+  weight: 100
 }
 
 const poison = {
   name: 'poison',
-  weight: 1,
-  hidden: true
+  weight: 1
 }
 
+const candlestick = {
+  name: 'candlestick',
+  weight: 10
+}
+
+const dumbbell = {
+  name: 'dumbbell',
+  weight: 10
+}
+
+const axe = {
+  name: 'axe',
+  weight: 10
+}
+
+const pistol = {
+  name: 'pistol',
+  weight: 10
+}
+
+const bat = {
+  name: 'bat',
+  weight: 10
+}
+
+const trophy = {
+  name: 'trophy',
+  weight: 35
+}
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 const bedroom = 'Bedroom'
 const balcony = 'Balcony'
 const garden = 'Garden'
 const saloon = 'Saloon'
+const dining = 'Dining room'
+const kitchen = 'Kitchen'
+const library = 'Library'
+const spa = 'Spa'
+const theater = 'Theather'
+const hall = 'hall'
+const biliard = 'billiard room'
 
 // ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS:
 
@@ -114,9 +147,9 @@ const randomSelector = array => {
 // With a killer, a weapon and a room.
 // The values will be set later.
 const mystery = {
-  killer:'',
-  weapon:'',
-  room:''
+  killer: '',
+  weapon: '',
+  room: ''
 }
 
 // This function will be invoked when you click on the killer card.
@@ -132,11 +165,6 @@ const pickKiller = () => {
   const theKillerImage = document.getElementById("killerImage")
   theKillerImage.src = mystery.killer.image
   document.getElementById(`killerOccupation`).innerHTML = `Occupation: ${mystery.killer.occupation}`
-
-  /*document.getElementById('killerCard').onclick = function () {
-    pickKiller()
-    document.getElementById('killerImage').innerHTML = `<img src='${mystery.killer.image}'>`
-  }*/
 }
 
 // pickWeapon and pickRoom in a similar way.
@@ -148,7 +176,6 @@ const pickWeapon = () => {
   document.getElementById(
     'weaponName'
   ).innerHTML = `weight: ${mystery.weapon.weight} name: ${mystery.weapon.name}`
-
 }
 
 const pickRoom = () => {
@@ -179,29 +206,10 @@ document.getElementById('weaponCard').onclick = function () {
 // It should show something like: 'The murder was committed by Jacob Green, in the living room with a rope.'
 const revealMystery = () => {
 
-  
- /* pickKiller()
-  pickRoom()
-  pickWeapon() */
-
   document.getElementById(
     'mystery'
   ).innerHTML = `The murder was committed in the ${mystery.room}, 
   by ${mystery.killer.firstName} with the ${mystery.weapon.name}`
-
 }
 
 document.getElementById('revealation').onclick = revealMystery 
-/*
-document.getElementById('weaponCard').onclick = function () {
-  pickWeapon()
-} */
-
-/*document.getElementById('roomCard').onclick = function () {
-  pickRoom()
-}/*
-
-/*document.getElementById('killerCard').onclick = function () {
-    pickKiller()
-    document.getElementById('killerImage').innerHTML = `<img src='${mystery.killer.image}'>`
-}*/
