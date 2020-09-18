@@ -114,8 +114,8 @@ const kitchen = 'Kitchen'
 const library = 'Library'
 const spa = 'Spa'
 const theater = 'Theather'
-const hall = 'hall'
-const biliard = 'billiard room'
+const hall = 'Hall'
+const biliard = 'Billiard room'
 
 // ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS:
 
@@ -234,4 +234,4 @@ const revealMystery = () => {
 }
 
 document.getElementById(
-  'revealation').onclick = revealMystery 
+  'revealAll').onclick = revealMystery 
